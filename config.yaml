@@ -1,0 +1,27 @@
+# DyTEGNN default hyperparameters (mirrors Table 13 of the paper / Appendix A)
+# =============================================================================
+
+model:
+  d_h: 64            # hidden dimension
+  d_time: 32         # functional time-encoding dimension
+  K: 64              # hierarchical pooling size (super-nodes)
+  n_layers: 2        # message-passing layers
+  n_heads: 4         # attention heads
+  dropout: 0.3
+
+training:
+  lr: 0.01
+  weight_decay: 5.0e-4
+  epochs: 200
+  patience: 40       # early stopping (validation macro-F1)
+  batch_events: 600  # (used by the full streaming trainer; this reference
+                     #  implementation trains on the full event batch)
+
+loss:
+  det_weight: 0.5        # lambda_det   (relation-detection auxiliary loss)
+  stability_weight: 0.1  # lambda_stab  (stability soft penalty)
+  power_iters: 5         # spectral-radius power-iteration steps
+
+data:
+  train_val_test: [0.60, 0.20, 0.20]   # node split for classification
+  seeds: [0, 1, 2, 3, 4]               # TGB-recommended seeds

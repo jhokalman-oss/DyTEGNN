@@ -1,0 +1,6 @@
+# DyTEGNN reproducibility package — Python dependencies
+# Tested with Python 3.10 and PyTorch 2.x (CPU or CUDA).
+
+torch>=2.0
+numpy>=1.24
+pyyaml>=6.0

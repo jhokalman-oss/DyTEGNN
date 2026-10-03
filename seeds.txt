@@ -1,0 +1,9 @@
+# DyTEGNN — reproducibility seeds
+# The five TGB-recommended random seeds used for every reported experiment.
+# Python, NumPy, PyTorch and CUDA RNGs are seeded identically per run.
+
+0
+1
+2
+3
+4
